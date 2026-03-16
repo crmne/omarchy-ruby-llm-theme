@@ -1,0 +1,23 @@
+@define-color foreground #231f24;
+@define-color background #f7f3f1;
+@define-color text-muted #5c5359;
+@define-color brand #e2462f;
+@define-color brand-strong #c9271e;
+@define-color brand-deep #9e1209;
+
+window#waybar #workspaces button.active,
+window#waybar #workspaces button.focused {
+  background-color: alpha(@brand, 0.22);
+  color: @brand-deep;
+}
+
+#clock.time,
+#custom-update,
+#custom-omarchy,
+#bluetooth.connected {
+  color: @brand;
+}
+
+window#waybar #clock.date {
+  color: @text-muted;
+}
