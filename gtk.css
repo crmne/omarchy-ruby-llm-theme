@@ -1,48 +1,111 @@
-/* RubyLLM Light GTK overrides for Adwaita */
+/* RubyLLM Light GTK overrides for Adwaita/Libadwaita */
 
-/* Legacy GTK color names */
-@define-color theme_bg_color #f6f2ee;
-@define-color theme_fg_color #4e4750;
-@define-color theme_base_color #f6f2ee;
-@define-color theme_text_color #4e4750;
-@define-color theme_selected_bg_color #e2462f;
-@define-color theme_selected_fg_color #f6f2ee;
+@define-color background        #f6f2ee;
+@define-color foreground        #4e4750;
+
+/* Base palette */
+@define-color black             #efe7e0;
+@define-color bright_black      #d3c7bb;
+@define-color red               #a5222f;
+@define-color green             #396847;
+@define-color yellow            #ac5402;
+@define-color blue              #e2462f;
+@define-color magenta           #6e33ce;
+@define-color cyan              #287980;
+@define-color white             #4e4750;
+@define-color bright_red        #b3434e;
+@define-color bright_green      #577f63;
+@define-color bright_yellow     #b86e28;
+@define-color bright_blue       #c9271e;
+@define-color bright_magenta    #8452d5;
+@define-color bright_cyan       #488d93;
+@define-color bright_white      #3d2b5a;
+
+/* Accent system */
+@define-color accent_bg_color   @blue;
+@define-color accent_fg_color   @background;
+@define-color accent_color      @bright_blue;
+
+/* Window */
+@define-color window_bg_color   @background;
+@define-color window_fg_color   @foreground;
+
+/* Views / sidebars */
+@define-color view_bg_color     #f2ece7;
+@define-color view_fg_color     @foreground;
+@define-color sidebar_bg_color  #efe7e0;
+@define-color sidebar_fg_color  @foreground;
+@define-color sidebar_backdrop_color #e7ddd5;
+@define-color sidebar_shade_color    #e7ddd5;
+
+/* Headerbar */
+@define-color headerbar_bg_color       #efe7e0;
+@define-color headerbar_fg_color       @foreground;
+@define-color headerbar_backdrop_color #e7ddd5;
+@define-color headerbar_shade_color    #e7ddd5;
+
+/* Cards / popovers */
+@define-color card_bg_color     #fbf8f5;
+@define-color card_fg_color     @foreground;
+@define-color popover_bg_color  #f2ece7;
+@define-color popover_fg_color  @foreground;
+
+/* Dialogs */
+@define-color dialog_bg_color   @background;
+@define-color dialog_fg_color   @foreground;
+
+/* States */
+@define-color destructive_bg_color @red;
+@define-color destructive_fg_color @background;
+@define-color success_bg_color  @green;
+@define-color success_fg_color  @background;
+@define-color warning_bg_color  @yellow;
+@define-color warning_fg_color  @background;
+@define-color error_bg_color    @red;
+@define-color error_fg_color    @background;
+
+/* Borders */
+@define-color borders alpha(@foreground, 0.1);
+
+/* GTK legacy mappings */
+@define-color theme_fg_color            @foreground;
+@define-color theme_text_color          @foreground;
+@define-color theme_bg_color            @background;
+@define-color theme_base_color          @view_bg_color;
+@define-color theme_selected_bg_color   @accent_bg_color;
+@define-color theme_selected_fg_color   @accent_fg_color;
+@define-color insensitive_bg_color      @background;
+@define-color insensitive_fg_color      #9c8c80;
+@define-color insensitive_base_color    @view_bg_color;
+@define-color theme_unfocused_fg_color  @foreground;
+@define-color theme_unfocused_text_color @foreground;
+@define-color theme_unfocused_bg_color  @background;
+@define-color theme_unfocused_base_color @view_bg_color;
 @define-color theme_unfocused_selected_bg_color #955f61;
-@define-color theme_unfocused_selected_fg_color #f6f2ee;
-@define-color theme_tooltip_bg_color #efe7e0;
-@define-color theme_tooltip_fg_color #4e4750;
-@define-color theme_headerbar_bg_color #efe7e0;
-@define-color theme_headerbar_fg_color #4e4750;
-@define-color theme_headerbar_backdrop_color #e7ddd5;
-@define-color theme_headerbar_border_color #d3c7bb;
-
-/* Libadwaita/GTK4 color names */
-@define-color accent_color #e2462f;
-@define-color accent_bg_color #e2462f;
-@define-color accent_fg_color #f6f2ee;
-@define-color window_bg_color #f6f2ee;
-@define-color window_fg_color #4e4750;
-@define-color view_bg_color #f6f2ee;
-@define-color view_fg_color #4e4750;
-@define-color headerbar_bg_color #efe7e0;
-@define-color headerbar_fg_color #4e4750;
-@define-color card_bg_color #fbf8f5;
-@define-color card_fg_color #4e4750;
+@define-color theme_unfocused_selected_fg_color @background;
+@define-color unfocused_insensitive_color #9c8c80;
+@define-color unfocused_borders alpha(@foreground, 0.08);
+@define-color warning_color @yellow;
+@define-color error_color @red;
+@define-color success_color @green;
+@define-color destructive_color @red;
+@define-color content_view_bg @view_bg_color;
+@define-color text_view_bg @view_bg_color;
 
 window,
 .background {
-  background-color: @window_bg_color;
-  color: @window_fg_color;
+    background-color: @window_bg_color;
+    color: @window_fg_color;
 }
 
 button.suggested-action,
 button:checked,
 switch:checked {
-  background-color: @accent_bg_color;
-  color: @accent_fg_color;
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
 }
 
 selection {
-  background-color: @accent_bg_color;
-  color: @accent_fg_color;
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
 }
