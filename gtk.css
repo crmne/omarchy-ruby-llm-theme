@@ -13,7 +13,7 @@
 @define-color magenta           #6e33ce;
 @define-color cyan              #287980;
 @define-color white             #4e4750;
-@define-color bright_red        #b3434e;
+@define-color bright_red        #b54230;
 @define-color bright_green      #577f63;
 @define-color bright_yellow     #b86e28;
 @define-color bright_blue       #c9271e;
@@ -137,4 +137,11 @@ window.nautilus-window .path-bar button:checked,
 window.nautilus-window .path-bar button.active {
     background-color: alpha(@accent_bg_color, 0.18);
     color: @accent_color;
+}
+
+/* Make the rectangular surface behind rounded popovers transparent */
+popover,
+popover.background {
+    background: transparent;
+    background-color: transparent;
 }

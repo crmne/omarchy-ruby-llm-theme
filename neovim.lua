@@ -7,12 +7,17 @@ return {
 			options = {
 				terminal_colors = false,
 			},
+			palettes = {
+				dayfox = {
+					orange = "#8a6840",
+				},
+			},
 		},
 	},
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "dawnfox",
+			colorscheme = "dayfox",
 		},
 	},
 }

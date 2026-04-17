@@ -1,0 +1,129 @@
+#!/bin/bash
+#
+# Automated screenshot workflow for the ruby-llm / ruby-llm-dark Omarchy themes.
+# Switches theme, opens a scene on workspace 6, screenshots, cleans up.
+#
+# Usage:
+#   ruby-llm-theme-screenshot light    # screenshot light theme only
+#   ruby-llm-theme-screenshot dark     # screenshot dark theme only
+#   ruby-llm-theme-screenshot both     # both sequentially (default)
+
+RUBY_FILE="$HOME/Work/ruby_llm/lib/ruby_llm/chat.rb"
+NAUTILUS_DIR="$HOME/Work/ruby_llm/lib/ruby_llm"
+BROWSER_URL="https://rubyllm.com"
+THEME_DIR="$HOME/.config/omarchy/themes"
+WORKSPACE=6
+SHUTTER_SOUND="/usr/share/sounds/freedesktop/stereo/screen-capture.oga"
+
+notify() {
+  pw-play "$SHUTTER_SOUND" &
+  echo "$1"
+}
+
+# Close all windows on the target workspace
+cleanup_workspace() {
+  local pids
+  pids=$(hyprctl clients -j | python3 -c "
+import json, sys
+for c in json.load(sys.stdin):
+    if c['workspace']['id'] == $WORKSPACE:
+        print(c['pid'])
+" 2>/dev/null)
+
+  for pid in $pids; do
+    kill "$pid" 2>/dev/null || true
+  done
+  sleep 0.5
+}
+
+take_screenshot() {
+  local variant="$1"
+  local theme_name output_dir bg_dir bg_file
+
+  if [[ "$variant" == "light" ]]; then
+    theme_name="ruby-llm"
+  else
+    theme_name="ruby-llm-dark"
+  fi
+
+  output_dir="$THEME_DIR/$theme_name"
+  bg_dir="$output_dir/backgrounds"
+  bg_file="$(find "$bg_dir" -maxdepth 1 -type f \( -name '*.jpg' -o -name '*.png' \) 2>/dev/null | sort | head -1)"
+
+  echo "=== $theme_name ==="
+
+  # Switch theme
+  echo "Switching to $theme_name..."
+  omarchy-theme-set "$theme_name"
+  sleep 0.5
+
+  # Clean workspace 6
+  cleanup_workspace
+
+  # Kill any lingering chromium that theme-set may have spawned
+  pkill -f chromium 2>/dev/null || true
+  sleep 0.5
+
+  # Move to workspace 6
+  hyprctl dispatch workspace "$WORKSPACE"
+  sleep 0.5
+
+  # 1. Terminal with Neovim
+  echo "  Opening Alacritty + Neovim..."
+  setsid alacritty -e nvim "$RUBY_FILE" >/dev/null 2>&1 &
+  sleep 2
+
+  # 2. Nautilus
+  echo "  Opening Nautilus..."
+  nautilus -q 2>/dev/null || true
+  sleep 0.3
+  setsid nautilus --new-window "$NAUTILUS_DIR" >/dev/null 2>&1 &
+  sleep 2
+
+  # 3. Browser on rubyllm.com
+  echo "  Opening Chromium..."
+  setsid chromium --new-window "$BROWSER_URL" >/dev/null 2>&1 &
+  sleep 3
+
+  # 4. Background image preview
+  if [[ -n "$bg_file" ]]; then
+    echo "  Opening background: $(basename "$bg_file")..."
+    setsid imv "$bg_file" >/dev/null 2>&1 &
+    sleep 1
+  fi
+
+  # Let everything render
+  sleep 2
+
+  # Take screenshot
+  local output_file="$output_dir/preview.png"
+  grim "$output_file"
+  notify "  Screenshot saved: $output_file ($(du -h "$output_file" | cut -f1))"
+
+  # Clean up the scene
+  echo "  Cleaning up..."
+  cleanup_workspace
+  pkill -f chromium 2>/dev/null || true
+  nautilus -q 2>/dev/null || true
+  sleep 0.5
+}
+
+# Default to both
+variant="${1:-both}"
+
+case "$variant" in
+  both)
+    take_screenshot light
+    echo ""
+    take_screenshot dark
+    echo ""
+    echo "Done! Both previews saved."
+    ;;
+  light|dark)
+    take_screenshot "$variant"
+    ;;
+  *)
+    echo "Usage: ruby-llm-theme-screenshot [light|dark|both]"
+    exit 1
+    ;;
+esac

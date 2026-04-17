@@ -29,7 +29,7 @@ background = "#d3c7bb"
 
 [colors.hints.start]
 foreground = "#4e4750"
-background = "#955f61"
+background = "#8a6840"
 
 [colors.hints.end]
 foreground = "#4e4750"
@@ -51,7 +51,7 @@ white = "#f2e9e1"
 
 [colors.bright]
 black = "#9c8c80"
-red = "#b3434e"
+red = "#b54230"
 green = "#577f63"
 yellow = "#b86e28"
 blue = "#4863b6"
@@ -71,7 +71,7 @@ white = "#cec6bf"
 
 [[colors.indexed_colors]]
 index = 16
-color = "#955f61"
+color = "#8a6840"
 
 [[colors.indexed_colors]]
 index = 17
