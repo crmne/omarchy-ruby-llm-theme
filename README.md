@@ -1,6 +1,6 @@
 # RubyLLM Light Theme for Omarchy
 
-RubyLLM Light is a warm, paper-toned Omarchy theme inspired by the RubyLLM docs palette.
+RubyLLM Light is a warm, paper-toned Omarchy theme sampled from the RubyLLM Homepage 4.0 design.
 
 ![RubyLLM Light preview](preview.png)
 
@@ -27,10 +27,16 @@ omarchy-theme-set ruby-llm
 
 ## Core Colors
 
-- Background: `#f6f2ee`
-- Foreground: `#3d2b5a`
-- Accent red: `#a5222f`
-- Accent blue: `#2848a9`
+- Background: `#f7f3f1`
+- Surface: `#faf9f7`
+- Section tint: `#f3ece7`
+- Foreground: `#3a3430`
+- Muted text: `#726f6c`
+- Ruby red: `#b30000`
+- Ruby bright: `#c9271e`
+- Semantic green: `#396847`
+- Semantic blue: `#205ea6`
+- Semantic teal: `#287980`
 
 ## Notes
 

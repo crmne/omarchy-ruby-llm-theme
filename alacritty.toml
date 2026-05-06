@@ -1,78 +1,78 @@
 # RubyLLM Light Alacritty Colors
-# Warm light palette inspired by RubyLLM docs
+# Warm light palette sampled from the RubyLLM Homepage 4.0 design
 
 [colors.primary]
-background = "#f6f2ee"
-foreground = "#4e4750"
-dim_foreground = "#302b5d"
-bright_foreground = "#643f61"
+background = "#f7f3f1"
+foreground = "#3a3430"
+dim_foreground = "#57524f"
+bright_foreground = "#2d2928"
 
 [colors.cursor]
-text = "#f6f2ee"
-cursor = "#643f61"
+text = "#f7f3f1"
+cursor = "#3a3430"
 
 [colors.vi_mode_cursor]
-text = "#4e4750"
-cursor = "#287980"
+text = "#faf9f7"
+cursor = "#b30000"
 
 [colors.search.matches]
-foreground = "#4e4750"
-background = "#a4c1c2"
+foreground = "#3a3430"
+background = "#f2ddda"
 
 [colors.search.focused_match]
-foreground = "#f6f2ee"
-background = "#396847"
+foreground = "#faf9f7"
+background = "#b30000"
 
 [colors.footer_bar]
-foreground = "#4e4750"
-background = "#d3c7bb"
+foreground = "#3a3430"
+background = "#eae2dd"
 
 [colors.hints.start]
-foreground = "#4e4750"
-background = "#8a6840"
+foreground = "#3a3430"
+background = "#d5a670"
 
 [colors.hints.end]
-foreground = "#4e4750"
-background = "#d3c7bb"
+foreground = "#3a3430"
+background = "#f2ddda"
 
 [colors.selection]
-text = "#4e4750"
-background = "#e7d2be"
+text = "#3a3430"
+background = "#f2ddda"
 
 [colors.normal]
-black = "#c8bdb2"
-red = "#a5222f"
+black = "#d4d0cd"
+red = "#b30000"
 green = "#396847"
-yellow = "#ac5402"
-blue = "#2848a9"
-magenta = "#6e33ce"
+yellow = "#9b5139"
+blue = "#205ea6"
+magenta = "#a26958"
 cyan = "#287980"
-white = "#f2e9e1"
+white = "#57524f"
 
 [colors.bright]
-black = "#9c8c80"
-red = "#b54230"
+black = "#726f6c"
+red = "#c9271e"
 green = "#577f63"
-yellow = "#b86e28"
-blue = "#4863b6"
-magenta = "#8452d5"
+yellow = "#d5a670"
+blue = "#4385be"
+magenta = "#cf5f5c"
 cyan = "#488d93"
-white = "#f4ece6"
+white = "#3a3430"
 
 [colors.dim]
-black = "#7d7065"
-red = "#8c1d28"
+black = "#a5a19e"
+red = "#7a0000"
 green = "#30583c"
-yellow = "#924702"
-blue = "#223d90"
-magenta = "#5e2baf"
+yellow = "#715449"
+blue = "#1b4f8c"
+magenta = "#7c4f43"
 cyan = "#22676d"
-white = "#cec6bf"
+white = "#726f6c"
 
 [[colors.indexed_colors]]
 index = 16
-color = "#8a6840"
+color = "#d5a670"
 
 [[colors.indexed_colors]]
 index = 17
-color = "#a440b5"
+color = "#db9894"

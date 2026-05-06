@@ -1,53 +1,53 @@
 /* RubyLLM Light GTK overrides for Adwaita/Libadwaita */
 
-@define-color background        #f6f2ee;
-@define-color foreground        #4e4750;
+@define-color background        #f7f3f1;
+@define-color foreground        #3a3430;
 
 /* Base palette */
-@define-color black             #efe7e0;
-@define-color bright_black      #d3c7bb;
-@define-color red               #a5222f;
+@define-color black             #d4d0cd;
+@define-color bright_black      #a5a19e;
+@define-color red               #b30000;
 @define-color green             #396847;
-@define-color yellow            #ac5402;
-@define-color blue              #e2462f;
-@define-color magenta           #6e33ce;
+@define-color yellow            #9b5139;
+@define-color blue              #205ea6;
+@define-color magenta           #a26958;
 @define-color cyan              #287980;
-@define-color white             #4e4750;
-@define-color bright_red        #b54230;
+@define-color white             #57524f;
+@define-color bright_red        #c9271e;
 @define-color bright_green      #577f63;
-@define-color bright_yellow     #b86e28;
-@define-color bright_blue       #c9271e;
-@define-color bright_magenta    #8452d5;
+@define-color bright_yellow     #d5a670;
+@define-color bright_blue       #4385be;
+@define-color bright_magenta    #cf5f5c;
 @define-color bright_cyan       #488d93;
-@define-color bright_white      #3d2b5a;
+@define-color bright_white      #3a3430;
 
-/* Accent system (force warm orange so it shows consistently in Nautilus) */
-@define-color accent_bg_color   #c86421;
-@define-color accent_fg_color   @background;
-@define-color accent_color      #b14f12;
+/* Accent system */
+@define-color accent_bg_color   #b30000;
+@define-color accent_fg_color   #faf9f7;
+@define-color accent_color      #b30000;
 
 /* Window */
 @define-color window_bg_color   @background;
 @define-color window_fg_color   @foreground;
 
 /* Views / sidebars */
-@define-color view_bg_color     #f4eee9;
+@define-color view_bg_color     #faf9f7;
 @define-color view_fg_color     @foreground;
-@define-color sidebar_bg_color  #e8dbce;
+@define-color sidebar_bg_color  #f3ece7;
 @define-color sidebar_fg_color  @foreground;
-@define-color sidebar_backdrop_color #dfd0c0;
-@define-color sidebar_shade_color    #dfd0c0;
+@define-color sidebar_backdrop_color #eae2dd;
+@define-color sidebar_shade_color    #eae2dd;
 
 /* Headerbar */
-@define-color headerbar_bg_color       #eaded2;
+@define-color headerbar_bg_color       #f3ece7;
 @define-color headerbar_fg_color       @foreground;
-@define-color headerbar_backdrop_color #dfd0c0;
-@define-color headerbar_shade_color    #dfd0c0;
+@define-color headerbar_backdrop_color #eae2dd;
+@define-color headerbar_shade_color    #eae2dd;
 
 /* Cards / popovers */
-@define-color card_bg_color     #fbf8f5;
+@define-color card_bg_color     #faf9f7;
 @define-color card_fg_color     @foreground;
-@define-color popover_bg_color  #f2ece7;
+@define-color popover_bg_color  #faf9f7;
 @define-color popover_fg_color  @foreground;
 
 /* Dialogs */
@@ -75,15 +75,15 @@
 @define-color theme_selected_bg_color   @accent_bg_color;
 @define-color theme_selected_fg_color   @accent_fg_color;
 @define-color insensitive_bg_color      @background;
-@define-color insensitive_fg_color      #9c8c80;
+@define-color insensitive_fg_color      #726f6c;
 @define-color insensitive_base_color    @view_bg_color;
 @define-color theme_unfocused_fg_color  @foreground;
 @define-color theme_unfocused_text_color @foreground;
 @define-color theme_unfocused_bg_color  @background;
 @define-color theme_unfocused_base_color @view_bg_color;
-@define-color theme_unfocused_selected_bg_color #955f61;
+@define-color theme_unfocused_selected_bg_color #f2ddda;
 @define-color theme_unfocused_selected_fg_color @background;
-@define-color unfocused_insensitive_color #9c8c80;
+@define-color unfocused_insensitive_color #726f6c;
 @define-color unfocused_borders alpha(@foreground, 0.08);
 @define-color warning_color @yellow;
 @define-color error_color @red;
