@@ -1,47 +1,49 @@
-# RubyLLM Light Theme for Omarchy
+# RubyLLM Light for Omarchy Quattro
 
-RubyLLM Light is a warm, paper-toned Omarchy theme sampled from the RubyLLM Homepage 4.0 design.
+A warm, paper-toned theme sampled from the RubyLLM visual identity.
 
 ![RubyLLM Light preview](preview.png)
 
 ## Install
 
 ```bash
-omarchy-theme-install https://github.com/crmne/omarchy-ruby-llm-theme
+omarchy theme install https://github.com/crmne/omarchy-ruby-llm-theme.git
 ```
 
-Then activate:
+Activate it with:
 
 ```bash
-omarchy-theme-set ruby-llm
+omarchy theme set ruby-llm
 ```
 
-## What's Included
+## Architecture
 
-- Terminal palettes: `alacritty.toml`, `ghostty.conf`, `kitty.conf`
-- WM/UI styling: `hyprland.conf`, `hyprlock.conf`, `waybar.css`, `walker.css`, `swayosd.css`
-- Notifications/system: `mako.ini`, `btop.theme`, `icons.theme`
-- Editor integration: `neovim.lua`, `vscode.json`
-- Browser seed color: `chromium.theme`
-- Wallpapers: `backgrounds/`
+This is a declarative Omarchy Quattro theme. It provides only:
 
-## Core Colors
+- A semantic palette in `colors.toml`
+- A GNOME icon theme choice in `icons.theme`
+- Wallpapers in `backgrounds/`
+- A selector preview in `preview.png`
+
+Omarchy generates and applies the terminal, shell, Hyprland, editor, browser,
+Obsidian, keyboard, and btop integrations from the semantic palette. The theme
+contains no executable hooks, package installation, or application-specific
+configuration files.
+
+## Core colors
 
 - Background: `#f7f3f1`
-- Surface: `#faf9f7`
-- Section tint: `#f3ece7`
 - Foreground: `#3a3430`
-- Muted text: `#726f6c`
+- Muted: `#726f6c`
 - Ruby red: `#b30000`
-- Ruby bright: `#c9271e`
-- Semantic green: `#396847`
-- Semantic blue: `#205ea6`
-- Semantic teal: `#287980`
+- Bright ruby: `#c9271e`
+- Green: `#396847`
+- Blue: `#205ea6`
+- Cyan: `#287980`
 
-## Notes
+## Requirements
 
-- This theme includes temporary wallpaper picks that will be replaced in a later pass.
-- VS Code integration uses Catppuccin Latte (`catppuccin.catppuccin-vsc`).
+Omarchy 4 (Quattro) or newer.
 
 ## License
 
