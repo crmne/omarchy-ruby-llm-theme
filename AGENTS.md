@@ -64,8 +64,7 @@ releases and match their style:
   known limitations honestly.
 
 Commit the notes as `packaging/release-notes/vX.Y.Z.md`, or in the
-repository's existing release-notes location, before tagging, and have the
-release workflow publish that file as the release description (for example
+repository's existing release-notes location, before tagging. If this repository uses a release workflow, configure it to publish that file as the release description (for example
 softprops/action-gh-release with `body_path` and
 `generate_release_notes: false`). Never leave GitHub's generated notes in
 place. After publishing, verify every media and download link.
